@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Carson</title>
+    <script>
+			function callAndroid(){
+				window.android.invoke_location();
+			}
+ 
+			<!--这里取到的是 android端传过来的数据-->
+            function javacalljswithargs(data){
+                document.getElementById("content").innerHTML = (data);
+            }
+    </script>
+</head>
+<body>
+<button type="button" id="button1" onclick="callAndroid()">点击按钮</button>
+<div id="content">安卓按钮点击0次</div>
+</body>
+</html>

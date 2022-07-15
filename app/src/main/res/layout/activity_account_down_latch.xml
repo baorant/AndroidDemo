@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.CountDownLatchActivity">
+    <TextView
+        android:id="@+id/textThread1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="事件1" />
+    <TextView
+        android:id="@+id/textThread2"
+        app:layout_constraintTop_toBottomOf="@+id/textThread1"
+        android:layout_width="match_parent"
+        android:text="事件2"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textThread3"
+        app:layout_constraintTop_toBottomOf="@+id/textThread2"
+        android:layout_width="match_parent"
+        android:text="事件3"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/threadBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textThread3"
+        android:text="启动按钮"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/threadBtn2"
+        app:layout_constraintTop_toBottomOf="@+id/threadBtn"
+        android:text="恢复按钮"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/textThread4"
+        app:layout_constraintTop_toBottomOf="@+id/threadBtn2"
+        android:layout_width="match_parent"
+        android:text="事件4"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
