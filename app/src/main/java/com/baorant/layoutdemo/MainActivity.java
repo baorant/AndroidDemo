@@ -35,15 +35,19 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     Log.d(TAG, "click index 0");
                     jumpWebViewActivity();
+                    break;
                 case 1:
                     Log.d(TAG, "click index 1");
                     jumpThreadActivity();
+                    break;
                 case 2:
                     Log.d(TAG, "click index 2");
                     jumpCountDownLatchActivity();
+                    break;
                 case 3:
                     Log.d(TAG, "click index 3");
                     jumpViewStubActivity();
+                    break;
                 default:
                     break;
             }
