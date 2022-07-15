@@ -20,7 +20,6 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
     Context context;
     List<String> stringList;
 
-    private int position = 0;
     private OnItemClickListener mClickListener;
 
     public TemAdapter(Context context, List<String> stringList) {
@@ -44,8 +43,8 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Log.d(TAG, "onBindViewHolder");
-        this.position = position;
         holder.getTextView().setText(stringList.get(position));
+        holder.setPosition(position);
     }
 
     @Override
@@ -57,6 +56,7 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private static final String TAG = "MyViewHolder";
         private final TextView textView;
+        private int position;
         // 声明自定义的接口
         private final OnItemClickListener mListener;
 
@@ -67,6 +67,10 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
             this.mListener = listener;
         }
 
+        public void setPosition(int position) {
+            this.position = position;
+        }
+
         public TextView getTextView() {
             return textView;
         }
@@ -74,7 +78,7 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
         @Override
         public void onClick(View v) {
             Log.d(TAG, "MyViewHolder onClick");
-            mListener.onItemClick(v, position);
+            mListener.onItemClick(v, this.position);
         }
     }
 }
