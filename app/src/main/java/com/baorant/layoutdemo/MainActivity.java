@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -41,23 +42,23 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     Log.d(TAG, "click index 0");
-                    jumpWebViewActivity();
+                    jumpNextActivity(WebViewActivity.class);
                     break;
                 case 1:
                     Log.d(TAG, "click index 1");
-                    jumpThreadActivity();
+                    jumpNextActivity(HandlerThreadActivity.class);
                     break;
                 case 2:
                     Log.d(TAG, "click index 2");
-                    jumpCountDownLatchActivity();
+                    jumpNextActivity(CountDownLatchActivity.class);
                     break;
                 case 3:
                     Log.d(TAG, "click index 3");
-                    jumpViewStubActivity();
+                    jumpNextActivity(ViewStubActivity.class);
                     break;
                 case 4:
                     Log.d(TAG, "click index 4");
-                    jumpCrashHandllerActivity();
+                    jumpNextActivity(CrashHandlerActivity.class);
                     break;
                 default:
                     break;
@@ -73,28 +74,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void jumpWebViewActivity() {
-        Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-        startActivity(intent);
-    }
-
-    private void jumpThreadActivity() {
-        Intent intent = new Intent(MainActivity.this, HandlerThreadActivity.class);
-        startActivity(intent);
-    }
-
-    private void jumpCountDownLatchActivity() {
-        Intent intent = new Intent(MainActivity.this, CountDownLatchActivity.class);
-        startActivity(intent);
-    }
-
-    private void jumpViewStubActivity() {
-        Intent intent = new Intent(MainActivity.this, ViewStubActivity.class);
-        startActivity(intent);
-    }
-
-    private void jumpCrashHandllerActivity() {
-        Intent intent = new Intent(MainActivity.this, CrashHandlerActivity.class);
+    private void jumpNextActivity(Class temActivity) {
+        Intent intent = new Intent(MainActivity.this, temActivity);
         startActivity(intent);
     }
 }
