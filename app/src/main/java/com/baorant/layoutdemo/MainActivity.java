@@ -1,20 +1,21 @@
 package com.baorant.layoutdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
 import com.baorant.layoutdemo.activity.CrashHandlerActivity;
+import com.baorant.layoutdemo.activity.ExoplayerActivity;
 import com.baorant.layoutdemo.activity.HandlerThreadActivity;
+import com.baorant.layoutdemo.activity.VideoViewActivity;
 import com.baorant.layoutdemo.activity.ViewStubActivity;
 import com.baorant.layoutdemo.activity.WebViewActivity;
 import com.baorant.layoutdemo.adapter.TemAdapter;
@@ -24,7 +25,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
-    "crashHandler 兜底"};
+    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
                 case 4:
                     Log.d(TAG, "click index 4");
                     jumpNextActivity(CrashHandlerActivity.class);
+                case 5:
+                    Log.d(TAG, "click index 5");
+                    jumpNextActivity(VideoViewActivity.class);
+                    break;
+                case 6:
+                    Log.d(TAG, "click index 6");
+                    jumpNextActivity(ExoplayerActivity.class);
                     break;
                 default:
                     break;
