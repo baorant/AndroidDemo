@@ -6,15 +6,22 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.baorant.layoutdemo.Util.AssetsUtil;
+import com.baorant.layoutdemo.Util.SharePreferenceUtil;
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
 import com.baorant.layoutdemo.activity.CrashHandlerActivity;
 import com.baorant.layoutdemo.activity.ExoplayerActivity;
 import com.baorant.layoutdemo.activity.HandlerThreadActivity;
+import com.baorant.layoutdemo.activity.HotFixActivity;
 import com.baorant.layoutdemo.activity.VideoViewActivity;
 import com.baorant.layoutdemo.activity.ViewStubActivity;
 import com.baorant.layoutdemo.activity.WebViewActivity;
@@ -25,7 +32,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
-    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频"};
+    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +75,22 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "click index 6");
                     jumpNextActivity(ExoplayerActivity.class);
                     break;
+                case 7:
+                    Log.d(TAG, "click index 7");
+                    jumpNextActivity(HotFixActivity.class);
+                    break;
                 default:
                     break;
             }
         });
         recyclerView.setAdapter(temAdapter);
+
+        copyAssetsDex();
+    }
+
+    private void copyAssetsDex() {
+        // 复制asset下的dex资源到应用对应文件目录下
+        new Thread(() -> AssetsUtil.loadAssetsToCache(MainActivity.this, "classes2.dex")).start();
     }
 
     private void requestPermission() {
@@ -85,5 +103,31 @@ public class MainActivity extends AppCompatActivity {
     private void jumpNextActivity(Class temActivity) {
         Intent intent = new Intent(MainActivity.this, temActivity);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.region_right_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.open_close_hot_fix:
+                openOrCloseHotFix();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void openOrCloseHotFix() {
+        if (SharePreferenceUtil.read("hotfixOpen").equals("1")) {
+            Toast.makeText(MainActivity.this, "关闭热修复", Toast.LENGTH_SHORT).show();
+            SharePreferenceUtil.write("hotfixOpen", "0");
+            return;
+        }
+        Toast.makeText(MainActivity.this, "打开热修复", Toast.LENGTH_SHORT).show();
+        SharePreferenceUtil.write("hotfixOpen", "1");
     }
 }
