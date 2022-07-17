@@ -3,14 +3,32 @@ package com.baorant.layoutdemo;
 import android.Manifest;
 import android.app.Application;
 import android.os.Build;
+import android.util.Log;
 
+import com.baorant.layoutdemo.Util.DexFixUtils;
 import com.baorant.layoutdemo.Util.MyCrashHandler;
+import com.baorant.layoutdemo.Util.SharePreferenceUtil;
 
 public class MyApplication extends Application {
+    private static final String TAG = "MyApplication";
+    private static MyApplication myApplication = null;
+
+    public static MyApplication getApplication() {
+        return myApplication;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.d(TAG, "onCreate");
+        myApplication = this;
+
         MyCrashHandler crashHandler= MyCrashHandler.getInstance();
         crashHandler.init(this);
+        // 热修复
+        if (SharePreferenceUtil.read("hotfixOpen").equals("1")) {
+            Log.d(TAG, "hotfixOpen");
+            DexFixUtils.loadFixedDex(this);
+        }
     }
 }
