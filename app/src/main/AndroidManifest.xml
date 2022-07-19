@@ -26,6 +26,9 @@
         android:theme="@style/Theme.LayoutDemo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.OomActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.HotFixActivity"
             android:exported="false" />
         <activity

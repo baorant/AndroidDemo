@@ -80,10 +80,10 @@ public class DexFixUtils {
                 Object fixDexElements = getDexElements(dexObj);
                 Object pathDexElements = getDexElements(pathObj);
                 // 合并两个数组
-                Object newDexElements = combineArray(fixDexElements,pathDexElements);
+                Object newDexElements = combineArray(fixDexElements, pathDexElements);
                 // 重新赋值给PathClassLoader 中的exElements数组
                 Object pathList = getPathList(pathClassLoader);
-                setField(pathList, pathList.getClass(),"dexElements",newDexElements);
+                setField(pathList, pathList.getClass(),"dexElements", newDexElements);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -91,7 +91,7 @@ public class DexFixUtils {
     }
 
     private static Object getPathList(Object baseDexClassLoader) throws Exception {
-        return getField(baseDexClassLoader,Class.forName("dalvik.system.BaseDexClassLoader"),"pathList");
+        return getField(baseDexClassLoader, Class.forName("dalvik.system.BaseDexClassLoader"),"pathList");
     }
 
     private static Object getDexElements(Object obj) throws Exception {
@@ -118,7 +118,7 @@ public class DexFixUtils {
      * @param field  待修改值的字符串名称
      * @param value  修改值
      */
-    private static void setField(Object obj,Class<?> cl, String field, Object value) throws Exception {
+    private static void setField(Object obj, Class<?> cl, String field, Object value) throws Exception {
         Field localField = cl.getDeclaredField(field);
         localField.setAccessible(true);
         localField.set(obj,value);

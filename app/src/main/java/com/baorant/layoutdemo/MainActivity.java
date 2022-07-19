@@ -22,6 +22,7 @@ import com.baorant.layoutdemo.activity.CrashHandlerActivity;
 import com.baorant.layoutdemo.activity.ExoplayerActivity;
 import com.baorant.layoutdemo.activity.HandlerThreadActivity;
 import com.baorant.layoutdemo.activity.HotFixActivity;
+import com.baorant.layoutdemo.activity.OomActivity;
 import com.baorant.layoutdemo.activity.VideoViewActivity;
 import com.baorant.layoutdemo.activity.ViewStubActivity;
 import com.baorant.layoutdemo.activity.WebViewActivity;
@@ -32,7 +33,8 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
-    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试"};
+    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试",
+    "oom内存泄漏测试"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 case 7:
                     Log.d(TAG, "click index 7");
                     jumpNextActivity(HotFixActivity.class);
+                    break;
+                case 8:
+                    Log.d(TAG, "click index 8");
+                    jumpNextActivity(OomActivity.class);
                     break;
                 default:
                     break;
