@@ -8,10 +8,13 @@ import android.util.Log;
 import com.baorant.layoutdemo.Util.DexFixUtils;
 import com.baorant.layoutdemo.Util.MyCrashHandler;
 import com.baorant.layoutdemo.Util.SharePreferenceUtil;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 public class MyApplication extends Application {
     private static final String TAG = "MyApplication";
     private static MyApplication myApplication = null;
+    private static RefWatcher sRefWatcher;
 
     public static MyApplication getApplication() {
         return myApplication;
@@ -30,5 +33,16 @@ public class MyApplication extends Application {
             Log.d(TAG, "hotfixOpen");
             DexFixUtils.loadFixedDex(this);
         }
+
+        // 判断当前进程是否为LeakCanary进程，该进程运行一个HeapAnalyzerService服务
+        // 如果不是，则初始化LeakCanary进程
+        if (! LeakCanary.isInAnalyzerProcess(this)) {
+            Log.d(TAG, "LeakCanary install");
+            sRefWatcher = LeakCanary.install(this);
+        }
+    }
+
+    public static RefWatcher getRefWatcher() {
+        return sRefWatcher;
     }
 }
