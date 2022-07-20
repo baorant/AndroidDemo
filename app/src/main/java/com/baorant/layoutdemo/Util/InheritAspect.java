@@ -10,14 +10,16 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class InheritAspect {
     private static final String TAG = "InheritAspect";
-    private static final String ON_CREATE_EXECUTION = "execution(void *..*Activity.onCreate(..))";
+    private static final String ON_ACTIVITY_METHOD_EXECUTION = "execution(void *..*Activity.*(..))";
 
-    @Pointcut(ON_CREATE_EXECUTION)
-    public void onCreateExecution() {
+    @Pointcut(ON_ACTIVITY_METHOD_EXECUTION)
+    public void onMethodExecution() {
     }
 
-    @Before("onCreateExecution()")
-    public void beforeOnCreateExecution(JoinPoint joinPoint) {
-        Log.i(TAG,joinPoint.getTarget().toString() + "onCreate start");
+    @Before("onMethodExecution()")
+    public void beforeMethodExecution(JoinPoint joinPoint) {
+        String className = joinPoint.getStaticPart().getSignature().getDeclaringTypeName();
+        String methodName = joinPoint.getStaticPart().getSignature().getName();
+        Log.d(TAG,"beforeMethodExecution: " + className + " " + methodName);
     }
 }
