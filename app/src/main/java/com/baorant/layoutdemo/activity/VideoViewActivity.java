@@ -9,9 +9,10 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
-public class VideoViewActivity extends AppCompatActivity {
+public class VideoViewActivity extends AbstractSubActivity {
     private static final String TAG = "VideoViewActivity";
     private VideoView videoView;
     private MediaController mediaController;

@@ -9,9 +9,10 @@ import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
-public class ViewStubActivity extends AppCompatActivity {
+public class ViewStubActivity extends AbstractSubActivity {
     Button show;
 
     @Override

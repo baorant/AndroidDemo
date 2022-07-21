@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.baorant.layoutdemo.Util.DexFixTest;
 
-public class HotFixActivity extends AppCompatActivity {
+public class HotFixActivity extends AbstractSubActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

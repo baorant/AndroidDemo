@@ -8,9 +8,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
-public class HandlerThreadActivity extends AppCompatActivity {
+public class HandlerThreadActivity extends AbstractSubActivity {
     Button button;
     TextView textView1;
     TextView textView2;
