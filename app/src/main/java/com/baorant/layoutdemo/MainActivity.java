@@ -52,38 +52,38 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     Log.d(TAG, "click index 0");
-                    jumpNextActivity(WebViewActivity.class);
+                    jumpNextActivity(WebViewActivity.class, position);
                     break;
                 case 1:
                     Log.d(TAG, "click index 1");
-                    jumpNextActivity(HandlerThreadActivity.class);
+                    jumpNextActivity(HandlerThreadActivity.class, position);
                     break;
                 case 2:
                     Log.d(TAG, "click index 2");
-                    jumpNextActivity(CountDownLatchActivity.class);
+                    jumpNextActivity(CountDownLatchActivity.class, position);
                     break;
                 case 3:
                     Log.d(TAG, "click index 3");
-                    jumpNextActivity(ViewStubActivity.class);
+                    jumpNextActivity(ViewStubActivity.class, position);
                     break;
                 case 4:
                     Log.d(TAG, "click index 4");
-                    jumpNextActivity(CrashHandlerActivity.class);
+                    jumpNextActivity(CrashHandlerActivity.class, position);
                 case 5:
                     Log.d(TAG, "click index 5");
-                    jumpNextActivity(VideoViewActivity.class);
+                    jumpNextActivity(VideoViewActivity.class, position);
                     break;
                 case 6:
                     Log.d(TAG, "click index 6");
-                    jumpNextActivity(ExoplayerActivity.class);
+                    jumpNextActivity(ExoplayerActivity.class, position);
                     break;
                 case 7:
                     Log.d(TAG, "click index 7");
-                    jumpNextActivity(HotFixActivity.class);
+                    jumpNextActivity(HotFixActivity.class, position);
                     break;
                 case 8:
                     Log.d(TAG, "click index 8");
-                    jumpNextActivity(OomActivity.class);
+                    jumpNextActivity(OomActivity.class, position);
                     break;
                 default:
                     break;
@@ -106,8 +106,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void jumpNextActivity(Class temActivity) {
+    private void jumpNextActivity(Class temActivity, int position) {
         Intent intent = new Intent(MainActivity.this, temActivity);
+        intent.putExtra("actionBarName", strings[position]);
         startActivity(intent);
     }
 

@@ -10,13 +10,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.baorant.layoutdemo.Util.AndroidInterfaceWeb;
 
 /**
  * webView和h5交互页面
  */
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends AbstractSubActivity {
     int count = 0;
 
     @SuppressLint("SetJavaScriptEnabled")

@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
@@ -20,7 +21,7 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 
-public class ExoplayerActivity extends AppCompatActivity {
+public class ExoplayerActivity extends AbstractSubActivity {
     private static final String TAG = "ExoplayerActivity";
     PlayerView playerView;
     private Uri uri;

@@ -6,9 +6,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
-public class CrashHandlerActivity extends AppCompatActivity {
+public class CrashHandlerActivity extends AbstractSubActivity {
     private static final String TAG = "CrashHandlerActivity";
 
     @Override
