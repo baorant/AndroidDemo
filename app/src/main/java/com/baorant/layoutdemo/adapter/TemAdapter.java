@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import com.baorant.layoutdemo.listener.OnItemClickListener;
 import com.baorant.layoutdemo.R;
 
 import java.util.List;
+import java.util.Random;
 
 public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
     private static final String TAG = "TemAdapter";
@@ -53,16 +55,22 @@ public class TemAdapter extends RecyclerView.Adapter<TemAdapter.MyViewHolder>{
         return stringList != null ? stringList.size() : 0;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private static final String TAG = "MyViewHolder";
         private final TextView textView;
+        private final ImageView imageView;
         private int position;
         // 声明自定义的接口
         private final OnItemClickListener mListener;
+        private final int[] drawables = {R.drawable.flower1, R.drawable.flower2,
+                R.drawable.flower3};
 
         public MyViewHolder(@NonNull View itemView, OnItemClickListener listener) {
             super(itemView);
             textView = itemView.findViewById(R.id.oneItem);
+            imageView = itemView.findViewById(R.id.itemImage);
+
+            imageView.setBackgroundResource(drawables[new Random().nextInt(3)]);
             textView.setOnClickListener(this);
             this.mListener = listener;
         }
