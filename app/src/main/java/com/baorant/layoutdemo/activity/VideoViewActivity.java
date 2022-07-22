@@ -24,7 +24,7 @@ public class VideoViewActivity extends AbstractSubActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_view);
 
-        videoView = (VideoView)findViewById(R.id.videoView);
+        videoView = findViewById(R.id.videoView);
         mediaController = new MediaController(this);
 
         uri = Uri.parse("http://vjs.zencdn.net/v/oceans.mp4");
