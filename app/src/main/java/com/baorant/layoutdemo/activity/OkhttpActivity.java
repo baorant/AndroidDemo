@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.baorant.layoutdemo.Util.OkHttpClientUtil;
 import com.baorant.layoutdemo.Util.ThreadPoolUtil;
@@ -21,7 +22,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class OkhttpActivity extends AppCompatActivity {
+public class OkhttpActivity extends AbstractSubActivity {
     private static final String TAG = "OkhttpActivity";
 
     private Button syncGet;
