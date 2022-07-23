@@ -73,11 +73,11 @@ public class OkhttpActivity extends AbstractSubActivity {
 
                 @Override
                 public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                    if (response == null) {
+                    Log.d(TAG, "asyncGet onResponse begin");
+                    if (response.body() == null) {
                         return;
                     }
-                    Log.d(TAG, "asyncGet onResponse begin");
-                    asyncGetResult.setText(asyncGetResult.getText() + response.body().toString());
+                    runOnUiThread(() -> asyncGetResult.setText(asyncGetResult.getText() + response.body().toString()));
                 }
             });
         });
