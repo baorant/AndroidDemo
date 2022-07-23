@@ -44,6 +44,8 @@ dependencies {
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
 
     implementation 'org.aspectj:aspectjrt:1.9.6'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
 }
 
 import org.aspectj.bridge.IMessage

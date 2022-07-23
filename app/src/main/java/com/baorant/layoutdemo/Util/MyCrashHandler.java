@@ -21,7 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MyCrashHandler implements Thread.UncaughtExceptionHandler {
-    private static final String TAG = "CrashHandler";
+    private static final String TAG = "MyCrashHandler";
     private static final boolean DEBUG = true;
     // 文件路径
     private static final String PATH = Environment.getExternalStorageDirectory().getPath() + File.separator+ "crash";
@@ -46,7 +46,7 @@ public class MyCrashHandler implements Thread.UncaughtExceptionHandler {
 
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
-        Log.d(TAG, "do uncaughtException begin");
+        Log.d(TAG, "do uncaughtException begin: " + ex.toString());
         try {
             //将文件写入sd卡
             writeToSdcard(ex);
