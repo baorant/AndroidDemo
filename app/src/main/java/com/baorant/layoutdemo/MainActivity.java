@@ -34,7 +34,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
-    "crashHandler 兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试",
+    "crashHandler兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试",
     "oom内存泄漏测试", "okhttp工具类测试"};
 
     @Override
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 case 4:
                     Log.d(TAG, "click index 4");
                     jumpNextActivity(CrashHandlerActivity.class, position);
+                    break;
                 case 5:
                     Log.d(TAG, "click index 5");
                     jumpNextActivity(VideoViewActivity.class, position);
