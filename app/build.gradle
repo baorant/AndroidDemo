@@ -54,8 +54,10 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
 
-    //阿里的路由框架（java工程使用）
-    implementation 'com.alibaba:arouter-api:1.5.1'
+//    implementation project(":FrameworkModule")
+
+    api project(":secondmoduel")
+
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
 }
 

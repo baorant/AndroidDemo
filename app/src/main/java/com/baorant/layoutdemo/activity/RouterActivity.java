@@ -1,11 +1,15 @@
 package com.baorant.layoutdemo.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.fragment.app.FragmentActivity;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.baorant.frameworkmodule.FrameWorkActivity;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
@@ -27,7 +31,12 @@ public class RouterActivity extends AbstractSubActivity {
         beginRouter = findViewById(R.id.beginRouter);
 
         jumpToCountDown.setOnClickListener(v -> ARouter.getInstance().build("/base/CountDownLatchActivity").navigation());
-        jumpToExoplayer.setOnClickListener(v -> ARouter.getInstance().build("/base/ExoplayerActivity").navigation());
+        jumpToExoplayer.setOnClickListener(v ->
+        {
+//            ARouter.getInstance().build("/second/MainActivity").navigation();
+            Intent intent = new Intent(RouterActivity.this, FrameWorkActivity.class);
+            startActivity(intent);
+        });
 
         beginRouter.setOnClickListener(v -> {
             String url = edit_url.getText().toString();

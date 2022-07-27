@@ -9,3 +9,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AndroidDemo"
 include ':app'
+include ':secondmoduel'
+include ':FrameworkModule'
