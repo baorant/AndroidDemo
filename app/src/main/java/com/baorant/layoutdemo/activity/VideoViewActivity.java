@@ -9,9 +9,11 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
+@Route(path = "/base/VideoViewActivity")
 public class VideoViewActivity extends AbstractSubActivity {
     private static final String TAG = "VideoViewActivity";
     private VideoView videoView;

@@ -6,9 +6,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
+@Route(path = "/base/CrashHandlerActivity")
 public class CrashHandlerActivity extends AbstractSubActivity {
     private static final String TAG = "CrashHandlerActivity";
 

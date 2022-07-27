@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.google.android.exoplayer2.ExoPlayerFactory;
@@ -21,6 +22,7 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 
+@Route(path = "/base/ExoplayerActivity")
 public class ExoplayerActivity extends AbstractSubActivity {
     private static final String TAG = "ExoplayerActivity";
     PlayerView playerView;

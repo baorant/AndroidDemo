@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 import com.baorant.layoutdemo.Util.AndroidInterfaceWeb;
@@ -17,6 +18,7 @@ import com.baorant.layoutdemo.Util.AndroidInterfaceWeb;
 /**
  * webView和h5交互页面
  */
+@Route(path = "/base/WebViewActivity")
 public class WebViewActivity extends AbstractSubActivity {
     int count = 0;
 

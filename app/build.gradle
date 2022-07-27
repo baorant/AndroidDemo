@@ -13,6 +13,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //路由框架 java
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME : project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -46,6 +53,10 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.9.6'
 
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    //阿里的路由框架（java工程使用）
+    implementation 'com.alibaba:arouter-api:1.5.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
 }
 
 import org.aspectj.bridge.IMessage
