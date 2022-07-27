@@ -5,6 +5,7 @@ import android.app.Application;
 import android.os.Build;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.layoutdemo.Util.DexFixUtils;
 import com.baorant.layoutdemo.Util.MyCrashHandler;
 import com.baorant.layoutdemo.Util.SharePreferenceUtil;
@@ -28,6 +29,10 @@ public class MyApplication extends Application {
 
         MyCrashHandler crashHandler= MyCrashHandler.getInstance();
         crashHandler.init(this);
+
+        // 初始化路由框架
+        ARouter.init(MyApplication.this);
+
         // 热修复
         if (SharePreferenceUtil.read("hotfixOpen").equals("1")) {
             Log.d(TAG, "hotfixOpen");

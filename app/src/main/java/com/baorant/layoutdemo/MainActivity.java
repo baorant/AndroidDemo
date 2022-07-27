@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.layoutdemo.Util.AssetsUtil;
 import com.baorant.layoutdemo.Util.SharePreferenceUtil;
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
@@ -24,6 +26,7 @@ import com.baorant.layoutdemo.activity.HandlerThreadActivity;
 import com.baorant.layoutdemo.activity.HotFixActivity;
 import com.baorant.layoutdemo.activity.OkhttpActivity;
 import com.baorant.layoutdemo.activity.OomActivity;
+import com.baorant.layoutdemo.activity.RouterActivity;
 import com.baorant.layoutdemo.activity.VideoViewActivity;
 import com.baorant.layoutdemo.activity.ViewStubActivity;
 import com.baorant.layoutdemo.activity.WebViewActivity;
@@ -31,17 +34,21 @@ import com.baorant.layoutdemo.adapter.TemAdapter;
 
 import java.util.Arrays;
 
+@Route(path = "/base/MainActivity")
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
     "crashHandler兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试",
-    "oom内存泄漏测试", "okhttp工具类测试"};
+    "oom内存泄漏测试", "okhttp工具类测试", "路由测试页面"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 注入路由
+        ARouter.getInstance().inject(this);
 
         requestPermission();
 
@@ -90,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
                 case 9:
                     Log.d(TAG, "click index 9");
                     jumpNextActivity(OkhttpActivity.class, position);
+                    break;
+                case 10:
+                    Log.d(TAG, "click index 10");
+                    jumpNextActivity(RouterActivity.class, position);
                     break;
                 default:
                     break;

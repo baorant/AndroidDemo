@@ -10,9 +10,11 @@ import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
+@Route(path = "/base/ViewStubActivity")
 public class ViewStubActivity extends AbstractSubActivity {
     Button show;
     Button increaseHeight;

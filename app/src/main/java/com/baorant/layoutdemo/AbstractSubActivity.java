@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 public abstract class AbstractSubActivity extends AppCompatActivity {
     protected String actionBarTile;
 
@@ -37,6 +39,9 @@ public abstract class AbstractSubActivity extends AppCompatActivity {
         ImageButton imageButton=actionBar.getCustomView()
                 .findViewById(R.id.imageButtonActionBarMoreCommentBack);
         imageButton.setOnClickListener(view -> finish());
+
+        // 注入路由
+        ARouter.getInstance().inject(this);
     }
 
     /**

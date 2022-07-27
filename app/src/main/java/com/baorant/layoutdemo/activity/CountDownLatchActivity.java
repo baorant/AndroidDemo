@@ -11,11 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.layoutdemo.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
 import java.util.concurrent.CountDownLatch;
 
+@Route(path = "/base/CountDownLatchActivity")
 public class CountDownLatchActivity extends AbstractSubActivity {
     CountDownLatch countDownLatch = new CountDownLatch(3);
     TextView textView1;
