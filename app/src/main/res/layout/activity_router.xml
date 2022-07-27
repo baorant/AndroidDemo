@@ -10,14 +10,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="跳转CountDown页面"/>
     <Button
         android:id="@+id/jumpToExoplayer"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/jumpToCountDown"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="跳转frameActivity首页"/>
     <TextView
         android:id="@+id/showText"

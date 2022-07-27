@@ -21,7 +21,7 @@ public class FrameWorkActivity extends AppCompatActivity {
         jumpToSecondModule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build("/second/MainActivity").navigation();
+                ARouter.getInstance().build("/second/SecondMainActivity").navigation();
             }
         });
     }
