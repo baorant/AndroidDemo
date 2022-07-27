@@ -18,7 +18,7 @@
         app:layout_constraintLeft_toRightOf="@id/jumpToCountDown"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="跳转exoplayer页面"/>
+        android:text="跳转frameActivity首页"/>
     <TextView
         android:id="@+id/showText"
         app:layout_constraintTop_toBottomOf="@id/jumpToCountDown"

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 public abstract class AbstractSubActivity extends AppCompatActivity {
-    protected String actionBarTile;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
