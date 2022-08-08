@@ -1,14 +1,15 @@
 package com.baorant.frameworkmodule;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 
-public class FrameWorkActivity extends AppCompatActivity {
+@Route(path = "/framework/FrameWorkActivity")
+public class FrameWorkActivity extends AbstractSubActivity {
     Button jumpToSecondModule;
 
     @Override

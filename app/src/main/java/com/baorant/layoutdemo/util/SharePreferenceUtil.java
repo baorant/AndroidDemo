@@ -1,6 +1,5 @@
-package com.baorant.layoutdemo.Util;
+package com.baorant.layoutdemo.util;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.baorant.layoutdemo.MyApplication;

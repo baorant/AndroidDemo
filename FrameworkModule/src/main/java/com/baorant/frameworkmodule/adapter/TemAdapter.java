@@ -1,4 +1,4 @@
-package com.baorant.layoutdemo.adapter;
+package com.baorant.frameworkmodule.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.baorant.layoutdemo.listener.OnItemClickListener;
-import com.baorant.layoutdemo.R;
+import com.baorant.frameworkmodule.R;
+import com.baorant.frameworkmodule.listener.OnItemClickListener;
 
 import java.util.List;
 import java.util.Random;

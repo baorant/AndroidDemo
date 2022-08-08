@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.fragment.app.FragmentActivity;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.frameworkmodule.FrameWorkActivity;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
 @Route(path = "/base/RouterActivity")

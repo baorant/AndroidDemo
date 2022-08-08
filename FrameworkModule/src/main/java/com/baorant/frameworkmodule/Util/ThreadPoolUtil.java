@@ -1,4 +1,4 @@
-package com.baorant.layoutdemo.Util;
+package com.baorant.frameworkmodule.Util;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;

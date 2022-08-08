@@ -1,4 +1,4 @@
-package com.baorant.layoutdemo.Util;
+package com.baorant.frameworkmodule.Util;
 
 import android.content.Context;
 import android.widget.Toast;

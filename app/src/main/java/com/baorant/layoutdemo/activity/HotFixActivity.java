@@ -1,15 +1,12 @@
 package com.baorant.layoutdemo.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
-import com.baorant.layoutdemo.Util.DexFixTest;
+import com.baorant.frameworkmodule.Util.DexFixTest;
 
 @Route(path = "/base/HotFixActivity")
 public class HotFixActivity extends AbstractSubActivity {

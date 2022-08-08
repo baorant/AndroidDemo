@@ -2,13 +2,11 @@ package com.baorant.layoutdemo.activity;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.MyApplication;
 import com.baorant.layoutdemo.R;
-import com.baorant.layoutdemo.Util.Singleton;
+import com.baorant.frameworkmodule.Util.Singleton;
 
 @Route(path = "/base/OomActivity")
 public class OomActivity extends AbstractSubActivity {

@@ -1,11 +1,9 @@
-package com.baorant.layoutdemo.Util;
+package com.baorant.frameworkmodule.Util;
 
 import android.app.Activity;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class AndroidInterfaceWeb {
     private static final String TAG = "AndroidInterfaceWeb";
