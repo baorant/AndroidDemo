@@ -1,9 +1,6 @@
 package com.baorant.layoutdemo.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -11,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
 @Route(path = "/base/ViewStubActivity")

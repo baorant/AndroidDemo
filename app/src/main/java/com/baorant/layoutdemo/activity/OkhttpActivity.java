@@ -1,19 +1,17 @@
 package com.baorant.layoutdemo.activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
-import com.baorant.layoutdemo.Util.OkHttpClientUtil;
-import com.baorant.layoutdemo.Util.ThreadPoolUtil;
+import com.baorant.frameworkmodule.Util.OkHttpClientUtil;
+import com.baorant.frameworkmodule.Util.ThreadPoolUtil;
 
 import java.io.IOException;
 import java.util.HashMap;

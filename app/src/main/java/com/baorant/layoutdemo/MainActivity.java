@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.baorant.layoutdemo.Util.AssetsUtil;
-import com.baorant.layoutdemo.Util.SharePreferenceUtil;
+import com.baorant.frameworkmodule.Util.AssetsUtil;
+import com.baorant.layoutdemo.util.SharePreferenceUtil;
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
 import com.baorant.layoutdemo.activity.CrashHandlerActivity;
 import com.baorant.layoutdemo.activity.ExoplayerActivity;
@@ -30,7 +30,7 @@ import com.baorant.layoutdemo.activity.RouterActivity;
 import com.baorant.layoutdemo.activity.VideoViewActivity;
 import com.baorant.layoutdemo.activity.ViewStubActivity;
 import com.baorant.layoutdemo.activity.WebViewActivity;
-import com.baorant.layoutdemo.adapter.TemAdapter;
+import com.baorant.frameworkmodule.adapter.TemAdapter;
 
 import java.util.Arrays;
 

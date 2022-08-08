@@ -1,4 +1,4 @@
-package com.baorant.layoutdemo;
+package com.baorant.frameworkmodule.activity;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.baorant.frameworkmodule.R;
 
 public abstract class AbstractSubActivity extends AppCompatActivity {
 

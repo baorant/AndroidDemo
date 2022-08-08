@@ -7,10 +7,8 @@ import android.util.Log;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
 @Route(path = "/base/VideoViewActivity")

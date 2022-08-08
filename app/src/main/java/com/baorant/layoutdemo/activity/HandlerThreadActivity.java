@@ -6,12 +6,10 @@ import android.os.HandlerThread;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.baorant.layoutdemo.AbstractSubActivity;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
-import com.baorant.layoutdemo.Util.ThreadPoolUtil;
+import com.baorant.frameworkmodule.Util.ThreadPoolUtil;
 
 @Route(path = "/base/HandlerThreadActivity")
 public class HandlerThreadActivity extends AbstractSubActivity {

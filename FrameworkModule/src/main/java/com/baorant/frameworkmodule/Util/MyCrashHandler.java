@@ -1,4 +1,4 @@
-package com.baorant.layoutdemo.Util;
+package com.baorant.frameworkmodule.Util;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -9,8 +9,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
-
-import com.baorant.layoutdemo.MainActivity;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -67,7 +65,12 @@ public class MyCrashHandler implements Thread.UncaughtExceptionHandler {
 
     private void restartMyApp() {
         Intent intent = new Intent();
-        intent.setClass(mContext, MainActivity.class);
+        try {
+            Class mainActivity = Class.forName("com.baorant.layoutdemo.MainActivity");
+            intent.setClass(mContext, mainActivity);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
 
