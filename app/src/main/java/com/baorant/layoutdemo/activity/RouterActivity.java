@@ -1,13 +1,11 @@
 package com.baorant.layoutdemo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.baorant.frameworkmodule.FrameWorkActivity;
 import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.layoutdemo.R;
 
@@ -28,12 +26,12 @@ public class RouterActivity extends AbstractSubActivity {
         edit_url = findViewById(R.id.edit_url);
         beginRouter = findViewById(R.id.beginRouter);
 
-        jumpToCountDown.setOnClickListener(v -> ARouter.getInstance().build("/base/CountDownLatchActivity").navigation());
+        jumpToCountDown.setOnClickListener(v -> ARouter.getInstance().build("/base/CountDownLatchActivity")
+                .withString("actionBarName", "CountDownLatchActivity页面").navigation());
         jumpToExoplayer.setOnClickListener(v ->
         {
-//            ARouter.getInstance().build("/second/MainActivity").navigation();
-            Intent intent = new Intent(RouterActivity.this, FrameWorkActivity.class);
-            startActivity(intent);
+            ARouter.getInstance().build("/framework/FrameWorkActivity")
+                    .withString("actionBarName", "FrameWorkActivity页面").navigation();
         });
 
         beginRouter.setOnClickListener(v -> {
@@ -41,7 +39,7 @@ public class RouterActivity extends AbstractSubActivity {
             if (url.trim().equals("")) {
                 return;
             }
-            ARouter.getInstance().build(url).navigation();
+            ARouter.getInstance().build(url).withString("actionBarName", "自定义跳转URL页面").navigation();
         });
     }
 }
