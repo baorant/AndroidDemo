@@ -18,7 +18,7 @@
         app:layout_constraintLeft_toRightOf="@id/jumpToCountDown"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="跳转frameActivity首页"/>
+        android:text="跳转SecondModule首页"/>
     <TextView
         android:id="@+id/showText"
         app:layout_constraintTop_toBottomOf="@id/jumpToCountDown"

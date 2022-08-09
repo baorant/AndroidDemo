@@ -30,8 +30,8 @@ public class RouterActivity extends AbstractSubActivity {
                 .withString("actionBarName", "CountDownLatchActivity页面").navigation());
         jumpToExoplayer.setOnClickListener(v ->
         {
-            ARouter.getInstance().build("/framework/FrameWorkActivity")
-                    .withString("actionBarName", "FrameWorkActivity页面").navigation();
+            ARouter.getInstance().build("/second/SecondMainActivity")
+                    .withString("actionBarName", "SecondMainActivity页面").navigation();
         });
 
         beginRouter.setOnClickListener(v -> {
