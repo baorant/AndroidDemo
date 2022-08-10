@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 
 @Route(path = "/second/SecondMainActivity")
-public class SecondMainActivity extends AppCompatActivity {
+public class SecondMainActivity extends AbstractSubActivity {
     private static final String TAG = "secondMainActivity";
 
     @Override
