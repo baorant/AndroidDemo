@@ -4,21 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondMainActivity">
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello World _ second module!"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".EventBusActivity">
     <Button
-        android:id="@+id/btnToEvent"
-        app:layout_constraintTop_toBottomOf="@id/text1"
+        android:id="@+id/sendEvent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="跳转到eventBus页面"/>
-
+        android:text="发送eventBus事件"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

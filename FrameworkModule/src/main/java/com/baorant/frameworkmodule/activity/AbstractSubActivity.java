@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.frameworkmodule.R;
 
+import org.greenrobot.eventbus.EventBus;
+
 public abstract class AbstractSubActivity extends AppCompatActivity {
 
     @Override

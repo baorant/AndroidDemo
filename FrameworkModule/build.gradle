@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    api 'org.greenrobot:eventbus:3.1.1'
     api 'org.aspectj:aspectjrt:1.9.6'
 
     api 'com.squareup.okhttp3:okhttp:3.4.1'

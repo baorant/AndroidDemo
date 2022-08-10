@@ -12,7 +12,7 @@ import com.baorant.layoutdemo.R;
 @Route(path = "/base/RouterActivity")
 public class RouterActivity extends AbstractSubActivity {
     Button jumpToCountDown;
-    Button jumpToExoplayer;
+    Button jumpToSecondModule;
     EditText edit_url;
     Button beginRouter;
 
@@ -22,13 +22,13 @@ public class RouterActivity extends AbstractSubActivity {
         setContentView(R.layout.activity_router);
 
         jumpToCountDown = findViewById(R.id.jumpToCountDown);
-        jumpToExoplayer = findViewById(R.id.jumpToExoplayer);
+        jumpToSecondModule = findViewById(R.id.jumpToExoplayer);
         edit_url = findViewById(R.id.edit_url);
         beginRouter = findViewById(R.id.beginRouter);
 
         jumpToCountDown.setOnClickListener(v -> ARouter.getInstance().build("/base/CountDownLatchActivity")
                 .withString("actionBarName", "CountDownLatchActivity页面").navigation());
-        jumpToExoplayer.setOnClickListener(v ->
+        jumpToSecondModule.setOnClickListener(v ->
         {
             ARouter.getInstance().build("/second/SecondMainActivity")
                     .withString("actionBarName", "SecondMainActivity页面").navigation();

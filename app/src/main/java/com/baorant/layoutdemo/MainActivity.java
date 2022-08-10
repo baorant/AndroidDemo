@@ -1,6 +1,7 @@
 package com.baorant.layoutdemo;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -18,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.frameworkmodule.Util.AssetsUtil;
+import com.baorant.frameworkmodule.Util.JumpUtil;
 import com.baorant.layoutdemo.util.SharePreferenceUtil;
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
 import com.baorant.layoutdemo.activity.CrashHandlerActivity;
@@ -60,47 +62,47 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     Log.d(TAG, "click index 0");
-                    jumpNextActivity(WebViewActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, WebViewActivity.class, strings[position]);
                     break;
                 case 1:
                     Log.d(TAG, "click index 1");
-                    jumpNextActivity(HandlerThreadActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, HandlerThreadActivity.class, strings[position]);
                     break;
                 case 2:
                     Log.d(TAG, "click index 2");
-                    jumpNextActivity(CountDownLatchActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, CountDownLatchActivity.class, strings[position]);
                     break;
                 case 3:
                     Log.d(TAG, "click index 3");
-                    jumpNextActivity(ViewStubActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, ViewStubActivity.class, strings[position]);
                     break;
                 case 4:
                     Log.d(TAG, "click index 4");
-                    jumpNextActivity(CrashHandlerActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, CrashHandlerActivity.class, strings[position]);
                     break;
                 case 5:
                     Log.d(TAG, "click index 5");
-                    jumpNextActivity(VideoViewActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, VideoViewActivity.class, strings[position]);
                     break;
                 case 6:
                     Log.d(TAG, "click index 6");
-                    jumpNextActivity(ExoplayerActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, ExoplayerActivity.class, strings[position]);
                     break;
                 case 7:
                     Log.d(TAG, "click index 7");
-                    jumpNextActivity(HotFixActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, HotFixActivity.class, strings[position]);
                     break;
                 case 8:
                     Log.d(TAG, "click index 8");
-                    jumpNextActivity(OomActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, OomActivity.class, strings[position]);
                     break;
                 case 9:
                     Log.d(TAG, "click index 9");
-                    jumpNextActivity(OkhttpActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, OkhttpActivity.class, strings[position]);
                     break;
                 case 10:
                     Log.d(TAG, "click index 10");
-                    jumpNextActivity(RouterActivity.class, position);
+                    JumpUtil.jumpNextActivity(MainActivity.this, RouterActivity.class, strings[position]);
                     break;
                 default:
                     break;
@@ -121,12 +123,6 @@ public class MainActivity extends AppCompatActivity {
                 != PackageManager.PERMISSION_GRANTED){
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         }
-    }
-
-    private void jumpNextActivity(Class temActivity, int position) {
-        Intent intent = new Intent(MainActivity.this, temActivity);
-        intent.putExtra("actionBarName", strings[position]);
-        startActivity(intent);
     }
 
     @Override
