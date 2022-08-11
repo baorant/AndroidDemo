@@ -16,10 +16,17 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 @Route(path = "/second/SecondMainActivity")
 public class SecondMainActivity extends AbstractSubActivity {
     private static final String TAG = "secondMainActivity";
-    private Button btnToEvent;
+    @BindView(R2.id.btnToEvent)
+    Button btnToEvent;
+    @BindView(R2.id.btnToButterKnife)
+    Button btnToButterKnife;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +34,19 @@ public class SecondMainActivity extends AbstractSubActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_main);
 
-        btnToEvent = findViewById(R.id.btnToEvent);
-        btnToEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
-            }
-        });
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
+        }
+        ButterKnife.bind(SecondMainActivity.this);
+    }
+
+    @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife})
+    public void onViewClicked(View view) {
+        if (view.getId() == R.id.btnToEvent) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
+        }
+        if (view.getId() == R.id.btnToButterKnife) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, ButterKnifeActivity.class, "ButterKnifeActivity页面");
         }
     }
 

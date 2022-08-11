@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdk 31
@@ -50,6 +51,8 @@ dependencies {
     //阿里的路由框架（java工程使用）
     api 'com.alibaba:arouter-api:1.5.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+
+    api 'com.jakewharton:butterknife:10.2.3'
 }
 
 import org.aspectj.bridge.IMessage

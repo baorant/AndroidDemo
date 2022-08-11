@@ -9,11 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
+            android:name=".ButterKnifeActivity"
+            android:exported="false" />
+        <activity
             android:name=".EventBusActivity"
             android:exported="false" />
         <activity
             android:name=".SecondMainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
