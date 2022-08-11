@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdk 30
@@ -55,6 +56,7 @@ dependencies {
     api project(":secondmoduel")
 
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 }
 
 import org.aspectj.bridge.IMessage

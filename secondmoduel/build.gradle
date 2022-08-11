@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'//相应的库module模块添加这个
 
 android {
     compileSdk 31
@@ -45,4 +46,5 @@ dependencies {
 
     api project(":FrameworkModule")
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
 }

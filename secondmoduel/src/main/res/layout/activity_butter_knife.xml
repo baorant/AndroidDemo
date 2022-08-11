@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondMainActivity">
-
+    tools:context=".ButterKnifeActivity">
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/ButterKnifeTxt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World _ second module!"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="ButterKnifeActivity页面"/>
     <Button
-        android:id="@+id/btnToEvent"
-        app:layout_constraintTop_toBottomOf="@id/text1"
+        android:id="@+id/ButterKnifeBtn1"
+        app:layout_constraintTop_toBottomOf="@id/ButterKnifeTxt"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到eventBus页面"/>
+        android:text="ButterKnifeBtn1"/>
     <Button
-        android:id="@+id/btnToButterKnife"
-        app:layout_constraintTop_toBottomOf="@id/btnToEvent"
+        android:id="@+id/ButterKnifeBtn2"
+        app:layout_constraintTop_toBottomOf="@id/ButterKnifeBtn1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到ButterKnife页面"/>
+        android:text="ButterKnifeBtn2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
