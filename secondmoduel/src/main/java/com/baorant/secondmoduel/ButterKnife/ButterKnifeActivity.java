@@ -1,6 +1,4 @@
-package com.baorant.secondmoduel;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.baorant.secondmoduel.ButterKnife;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +6,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.baorant.frameworkmodule.activity.AbstractSubActivity;
+import com.baorant.secondmoduel.R;
+import com.baorant.secondmoduel.R2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventBusActivity">
+    tools:context=".eventBus.EventBusActivity">
     <Button
         android:id="@+id/sendEvent"
         app:layout_constraintTop_toTopOf="parent"

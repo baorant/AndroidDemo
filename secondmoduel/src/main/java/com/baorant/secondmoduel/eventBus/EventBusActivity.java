@@ -1,4 +1,4 @@
-package com.baorant.secondmoduel;
+package com.baorant.secondmoduel.eventBus;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.frameworkmodule.msg.EventMessage;
+import com.baorant.secondmoduel.R;
 
 import org.greenrobot.eventbus.EventBus;
 
