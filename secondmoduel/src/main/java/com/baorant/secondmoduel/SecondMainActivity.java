@@ -1,6 +1,5 @@
 package com.baorant.secondmoduel;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +10,9 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.baorant.frameworkmodule.Util.JumpUtil;
 import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.frameworkmodule.msg.EventMessage;
+import com.baorant.secondmoduel.ButterKnife.ButterKnifeActivity;
+import com.baorant.secondmoduel.eventBus.EventBusActivity;
+import com.baorant.secondmoduel.navigation.NavigationActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -40,13 +42,16 @@ public class SecondMainActivity extends AbstractSubActivity {
         ButterKnife.bind(SecondMainActivity.this);
     }
 
-    @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife})
+    @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife, R2.id.btnToNavigation})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btnToEvent) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
         }
         if (view.getId() == R.id.btnToButterKnife) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, ButterKnifeActivity.class, "ButterKnifeActivity页面");
+        }
+        if (view.getId() == R.id.btnToNavigation) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, NavigationActivity.class, "NavigationActivity页面");
         }
     }
 
