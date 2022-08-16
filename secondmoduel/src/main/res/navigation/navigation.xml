@@ -8,9 +8,6 @@
         android:name="com.baorant.secondmoduel.navigation.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
-        <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/secondFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -18,4 +15,19 @@
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
     </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.baorant.secondmoduel.navigation.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third">
+    </fragment>
+    <action
+        android:id="@+id/action_firstFragment_to_secondFragment"
+        app:destination="@id/secondFragment" />
+    <action
+        android:id="@+id/action_secondFragment_to_thirdFragment"
+        app:destination="@id/thirdFragment" />
+    <action
+        android:id="@+id/action_thirdFragment_to_firstFragment"
+        app:destination="@id/firstFragment" />
 </navigation>

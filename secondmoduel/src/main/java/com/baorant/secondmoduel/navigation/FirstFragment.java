@@ -14,12 +14,9 @@ import androidx.navigation.Navigation;
 import com.baorant.secondmoduel.R;
 
 public class FirstFragment extends Fragment {
-
-
     public FirstFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,11 +29,7 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button btnNext = view.findViewById(R.id.btn_next);
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFragment);
-            }
-        });
+        btnNext.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFragment));
     }
 }
