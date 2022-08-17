@@ -9,14 +9,14 @@
         android:id="@+id/jumpToCountDown"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="100dp"
         android:text="跳转CountDown页面"/>
     <Button
         android:id="@+id/jumpToExoplayer"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/jumpToCountDown"
-        android:layout_width="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="150dp"
         android:layout_height="100dp"
         android:text="跳转SecondModule首页"/>
     <TextView
