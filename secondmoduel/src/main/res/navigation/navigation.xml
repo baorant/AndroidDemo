@@ -1,33 +1,33 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/homefragment">
 
     <fragment
-        android:id="@+id/firstFragment"
+        android:id="@+id/homefragment"
         android:name="com.baorant.secondmoduel.navigation.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
     </fragment>
     <fragment
-        android:id="@+id/secondFragment"
+        android:id="@+id/discoverfragment"
         android:name="com.baorant.secondmoduel.navigation.SecondFragment"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" >
     </fragment>
     <fragment
-        android:id="@+id/thirdFragment"
+        android:id="@+id/mefragment"
         android:name="com.baorant.secondmoduel.navigation.ThirdFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third">
     </fragment>
     <action
         android:id="@+id/action_firstFragment_to_secondFragment"
-        app:destination="@id/secondFragment" />
+        app:destination="@id/discoverfragment" />
     <action
         android:id="@+id/action_secondFragment_to_thirdFragment"
-        app:destination="@id/thirdFragment" />
+        app:destination="@id/mefragment" />
     <action
         android:id="@+id/action_thirdFragment_to_firstFragment"
-        app:destination="@id/firstFragment" />
+        app:destination="@id/homefragment" />
 </navigation>

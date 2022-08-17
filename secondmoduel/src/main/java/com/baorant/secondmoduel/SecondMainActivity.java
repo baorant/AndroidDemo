@@ -11,6 +11,7 @@ import com.baorant.frameworkmodule.Util.JumpUtil;
 import com.baorant.frameworkmodule.activity.AbstractSubActivity;
 import com.baorant.frameworkmodule.msg.EventMessage;
 import com.baorant.secondmoduel.ButterKnife.ButterKnifeActivity;
+import com.baorant.secondmoduel.dataBinding.DatabindingActivity;
 import com.baorant.secondmoduel.eventBus.EventBusActivity;
 import com.baorant.secondmoduel.navigation.NavigationActivity;
 
@@ -42,7 +43,7 @@ public class SecondMainActivity extends AbstractSubActivity {
         ButterKnife.bind(SecondMainActivity.this);
     }
 
-    @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife, R2.id.btnToNavigation})
+    @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife, R2.id.btnToNavigation, R2.id.btnToDataBinding})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btnToEvent) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
@@ -52,6 +53,9 @@ public class SecondMainActivity extends AbstractSubActivity {
         }
         if (view.getId() == R.id.btnToNavigation) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, NavigationActivity.class, "NavigationActivity页面");
+        }
+        if (view.getId() == R.id.btnToDataBinding) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, DatabindingActivity.class, "DatabindingActivity页面");
         }
     }
 
