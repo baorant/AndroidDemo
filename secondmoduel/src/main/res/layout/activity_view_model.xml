@@ -28,4 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="-1"/>
+
+    <TextView
+        android:id="@+id/liveTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="执行操作"
+        android:textSize="17sp"
+        android:textColor="#000"
+        android:padding="20dp"
+        />
 </LinearLayout>
