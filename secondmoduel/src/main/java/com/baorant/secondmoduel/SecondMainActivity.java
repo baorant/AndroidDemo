@@ -14,6 +14,7 @@ import com.baorant.secondmoduel.ButterKnife.ButterKnifeActivity;
 import com.baorant.secondmoduel.dataBinding.DatabindingActivity;
 import com.baorant.secondmoduel.eventBus.EventBusActivity;
 import com.baorant.secondmoduel.navigation.NavigationActivity;
+import com.baorant.secondmoduel.room.RoomActivity;
 import com.baorant.secondmoduel.viewModel.ViewModelActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -45,7 +46,7 @@ public class SecondMainActivity extends AbstractSubActivity {
     }
 
     @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife, R2.id.btnToNavigation, R2.id.btnToDataBinding,
-    R2.id.btnToViewModel})
+    R2.id.btnToViewModel, R2.id.btnToRoom})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btnToEvent) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
@@ -61,6 +62,9 @@ public class SecondMainActivity extends AbstractSubActivity {
         }
         if (view.getId() == R.id.btnToViewModel) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, ViewModelActivity.class, "ViewModelActivity页面");
+        }
+        if (view.getId() == R.id.btnToRoom) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, RoomActivity.class, "RoomActivity页面");
         }
     }
 
