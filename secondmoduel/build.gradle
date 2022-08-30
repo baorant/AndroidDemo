@@ -3,6 +3,8 @@ plugins {
 }
 apply plugin: 'com.jakewharton.butterknife'//相应的库module模块添加这个
 
+def room_version = "2.3.0-rc01"
+
 android {
     compileSdk 31
 
@@ -18,7 +20,7 @@ android {
         //路由框架 java
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME : project.getName()]
+                arguments = [AROUTER_MODULE_NAME : project.getName(), "room.schemaLocation" : "$projectDir/schemas".toString()]
             }
         }
     }
@@ -54,4 +56,6 @@ dependencies {
     api project(":FrameworkModule")
     annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 }

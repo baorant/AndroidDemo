@@ -7,6 +7,8 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.frameworkmodule.Util.DexFixUtils;
 import com.baorant.frameworkmodule.Util.MyCrashHandler;
 import com.baorant.layoutdemo.util.SharePreferenceUtil;
+import com.baorant.secondmoduel.room.RoomActivity;
+import com.baorant.secondmoduel.room.database.MyDatabase;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
