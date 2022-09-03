@@ -3,6 +3,8 @@ package com.baorant.layoutdemo.activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -13,10 +15,24 @@ import com.baorant.frameworkmodule.Util.ThreadPoolUtil;
 
 @Route(path = "/base/HandlerThreadActivity")
 public class HandlerThreadActivity extends AbstractSubActivity {
+    private static final String TAG = "HandlerThreadActivity";
     Button button;
     TextView textView1;
     TextView textView2;
     TextView textView3;
+    Button handlerRunnableBtn;
+    int count;
+
+    private Handler mHandler = new Handler();
+    private Runnable mRunnable = new Runnable() {
+        public void run() {
+            Log.e(TAG, Thread.currentThread().getName() + " " + count);
+            count++;
+            setTitle("" + count);
+            // 每3秒执行一次
+//            mHandler.postDelayed(mRunnable, 3000);  //给自己发送消息，自运行
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +43,7 @@ public class HandlerThreadActivity extends AbstractSubActivity {
         textView1 = findViewById(R.id.text1);
         textView2 = findViewById(R.id.text2);
         textView3 = findViewById(R.id.text3);
+        handlerRunnableBtn = findViewById(R.id.handlerRunnableBtn);
 
         Thread.currentThread().setName("主线程");
 
@@ -51,5 +68,7 @@ public class HandlerThreadActivity extends AbstractSubActivity {
                 runOnUiThread(() -> textView3.setText("线程池当前子线程名为：" + temThreadName));
             });
         });
+
+        handlerRunnableBtn.setOnClickListener(v -> mHandler.post(mRunnable));
     }
 }
