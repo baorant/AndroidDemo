@@ -15,6 +15,9 @@ import com.baorant.secondmoduel.dataBinding.DatabindingActivity;
 import com.baorant.secondmoduel.eventBus.EventBusActivity;
 import com.baorant.secondmoduel.navigation.NavigationActivity;
 import com.baorant.secondmoduel.room.RoomActivity;
+import com.baorant.secondmoduel.thread.AsyncTaskActivity;
+import com.baorant.secondmoduel.thread.IntentServiceActivity;
+import com.baorant.secondmoduel.thread.ThreadActivity;
 import com.baorant.secondmoduel.viewModel.ViewModelActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -46,7 +49,7 @@ public class SecondMainActivity extends AbstractSubActivity {
     }
 
     @OnClick({R2.id.btnToEvent, R2.id.btnToButterKnife, R2.id.btnToNavigation, R2.id.btnToDataBinding,
-    R2.id.btnToViewModel, R2.id.btnToRoom})
+    R2.id.btnToViewModel, R2.id.btnToRoom, R2.id.btnToThread, R2.id.btnToAsyncTask, R2.id.btnToIntentService})
     public void onViewClicked(View view) {
         if (view.getId() == R.id.btnToEvent) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, EventBusActivity.class, "EventBusActivity页面");
@@ -65,6 +68,15 @@ public class SecondMainActivity extends AbstractSubActivity {
         }
         if (view.getId() == R.id.btnToRoom) {
             JumpUtil.jumpNextActivity(SecondMainActivity.this, RoomActivity.class, "RoomActivity页面");
+        }
+        if (view.getId() == R.id.btnToThread) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, ThreadActivity.class, "ThreadActivity页面");
+        }
+        if (view.getId() == R.id.btnToAsyncTask) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, AsyncTaskActivity.class, "AsyncTaskActivity页面");
+        }
+        if (view.getId() == R.id.btnToIntentService) {
+            JumpUtil.jumpNextActivity(SecondMainActivity.this, IntentServiceActivity.class, "IntentServiceActivity页面");
         }
     }
 

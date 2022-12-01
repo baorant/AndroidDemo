@@ -26,6 +26,13 @@
         android:theme="@style/Theme.LayoutDemo"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.ArcActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity.RouterActivity"
             android:exported="false" />
         <activity

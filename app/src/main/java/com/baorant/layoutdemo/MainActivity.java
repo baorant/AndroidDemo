@@ -20,6 +20,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.baorant.frameworkmodule.Util.AssetsUtil;
 import com.baorant.frameworkmodule.Util.JumpUtil;
+import com.baorant.layoutdemo.activity.ArcActivity;
 import com.baorant.layoutdemo.util.SharePreferenceUtil;
 import com.baorant.layoutdemo.activity.CountDownLatchActivity;
 import com.baorant.layoutdemo.activity.CrashHandlerActivity;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "WelcomeActivity";
     String[] strings = {"webview和h5交互", "多线程通信", "countDownLatch并发控制", "viewStub组件",
     "crashHandler兜底", "videoview播放视频", "exoplayer播放视频", "热修复测试",
-    "oom内存泄漏测试", "okhttp工具类测试", "路由测试页面"};
+    "oom内存泄漏测试", "okhttp工具类测试", "路由测试页面", "扇形图测试"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 case 10:
                     Log.d(TAG, "click index 10");
                     JumpUtil.jumpNextActivity(MainActivity.this, RouterActivity.class, strings[position]);
+                    break;
+                case 11:
+                    Log.d(TAG, "click index 10");
+                    JumpUtil.jumpNextActivity(MainActivity.this, ArcActivity.class, strings[position]);
                     break;
                 default:
                     break;

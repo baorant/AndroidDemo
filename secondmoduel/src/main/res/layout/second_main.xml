@@ -55,5 +55,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="跳转到Room页面"/>
+    <Button
+        android:id="@+id/btnToThread"
+        app:layout_constraintTop_toBottomOf="@id/btnToRoom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到Thread页面"/>
+    <Button
+        android:id="@+id/btnToAsyncTask"
+        app:layout_constraintTop_toBottomOf="@id/btnToThread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到AsyncTask页面"/>
+    <Button
+        android:id="@+id/btnToIntentService"
+        app:layout_constraintTop_toBottomOf="@id/btnToThread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到IntentService页面"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
